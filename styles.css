@@ -31,7 +31,7 @@ nav ul li a {
 
 .banner {
     background: url('image-de-fond.jpg') no-repeat center center/cover;
-    color: white;
+    color: rgb(73, 85, 255);
     text-align: center;
     padding: 120px 20px;
 }
