@@ -7,58 +7,59 @@ body {
 
 nav {
     background-color: #1E3A8A;
-    padding: 15px;
+    padding: 30px;
     text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: -20;
     display: flex;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 30px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: x-large;
 }
 
 .banner {
-    background: url('image-de-fond.jpg') no-repeat center center/cover;
+    background-image: url("/multimedia/imageFond.jpg");
     color: rgb(73, 85, 255);
     text-align: center;
-    padding: 120px 20px;
+    padding: 240px 40px;
 }
 
 .banner h1 {
-    font-size: 3.5em;
+    font-size: 7em;
     margin: 0;
 }
 
 .banner p {
-    font-size: 1.8em;
-    margin: 10px 0;
+    font-size: 3.6em;
+    margin: 20px 0;
 }
 
 .buttons {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 button {
     background-color: #FF7043;
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 24px 48px;
     cursor: pointer;
-    font-size: 1.2em;
-    margin: 10px;
-    border-radius: 25px;
+    font-size: 2.4em;
+    margin: 20px;
+    border-radius: 50px;
     transition: 0.3s;
 }
 
@@ -70,5 +71,5 @@ footer {
     background-color: #1E3A8A;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 30px;
 }
