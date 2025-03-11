@@ -10,7 +10,6 @@ nav {
     padding: 30px;
     text-align: center;
 }
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -18,7 +17,9 @@ nav ul {
     display: flex;
     justify-content: center;
 }
-
+nav a:hover {
+    background-color: rgba(83, 69, 69, 0.747); 
+}
 nav ul li {
     margin: 0 30px;
 }
@@ -33,6 +34,7 @@ nav ul li a {
 .banner {
     background-image: url("/multimedia/imageFond.jpg");
     background-size: 100%;
+    background-repeat: no-repeat;
     color: rgb(73, 85, 255);
     text-align: center;
     padding: 240px 40px;
