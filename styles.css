@@ -76,3 +76,11 @@ footer {
     text-align: center;
     padding: 30px;
 }
+.titleMain {
+    background-color:rgba(255, 255, 255, 0.616); /* Couleur de fond */
+    border-radius: 45px; /* Rayon des coins arrondis */
+    padding: 20px; /* Espacement interne pour le contenu */
+    width: 45%; /* Largeur spécifique */
+    text-align: center; /* Centrer le texte */
+    margin: 0 auto; /* Centrer l'élément horizontalement */
+}
