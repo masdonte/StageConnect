@@ -32,6 +32,7 @@ nav ul li a {
 
 .banner {
     background-image: url("/multimedia/imageFond.jpg");
+    background-size: 100%;
     color: rgb(73, 85, 255);
     text-align: center;
     padding: 240px 40px;
