@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F9FA;
+}
+
+nav {
+    background-color: #1E3A8A;
+    padding: 30px;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: -20;
+    display: flex;
+    justify-content: center;
+}
+nav a:hover {
+    background-color: rgba(83, 69, 69, 0.747); 
+}
+nav ul li {
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.banner {
+    background-image: url("/multimedia/imageFond.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: rgb(73, 85, 255);
+    text-align: center;
+    padding: 240px 40px;
+}
+
+.banner h1 {
+    font-size: 7em;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 3.6em;
+    margin: 20px 0;
+}
+
+.buttons {
+    margin-top: 40px;
+}
+
+button {
+    background-color: #FF7043;
+    color: white;
+    border: none;
+    padding: 24px 48px;
+    cursor: pointer;
+    font-size: 2.4em;
+    margin: 20px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #E64A19;
+}
+
+footer {
+    background-color: #1E3A8A;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+.titleMain {
+    background-color:rgba(255, 255, 255, 0.616); /* Couleur de fond */
+    border-radius: 45px; /* Rayon des coins arrondis */
+    padding: 20px; /* Espacement interne pour le contenu */
+    width: 45%; /* Largeur spécifique */
+    text-align: center; /* Centrer le texte */
+    margin: 0 auto; /* Centrer l'élément horizontalement */
+}
