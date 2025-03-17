@@ -11,14 +11,24 @@
         <nav>
             <ul>
                 <li><a href="../index.php">Accueil</a></li>
+                <li><a href="/STAGE-SIO1/pages/gestion.php">Gestion de vos offres de stage</a></li>
                 <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
                 <li><a href="/STAGE-SIO1/pages/review.php">Témoignages</a></li>
-                <li><a href="/STAGE-SIO1/pages/gestion.php">Gestion de vos offres de stage</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <?php
+        try {
+            $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
         
+            //Configuration de PDO pour permettre la bonne gestion des erreurs
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Connexion réussie";
+        } catch (PDOException $e) {
+            die("Erreur : " . $e->getMessage());
+        }
+        ?>
     </main>
     <footer>
         <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
