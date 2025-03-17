@@ -10,7 +10,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Accueiqqql</a></li>
+                <li><a href="#home">Accueil</a></li>
                 <li><a href="#offres">Offres de stage</a></li>
                 <li><a href="#postuler">Postuler</a></li>
                 <li><a href="#avis">Témoignages</a></li>
