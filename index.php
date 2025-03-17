@@ -40,12 +40,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-<?php 
-
-try{
-    $pdo = new PDO("mysql:host=localhost;dbname=challenge");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-}
-?>
