@@ -22,13 +22,10 @@
                 <p>Votre avenir commence ici</p>
             </div>
             <div class="buttons">
-                <div class="login">
-                    <button>Se connecter</button>
-                </div>
-                <div class="sign">
-                <button>S'inscrire</button>
-                </div>
+                <a href="pages/login.php"><button>Se connecter</button></a>
+                <a href="pages/register.php"><button>S'inscrire</button></a>
             </div>
+
         </div>
     </header>
     
