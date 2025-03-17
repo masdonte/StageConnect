@@ -1,0 +1,68 @@
+
+/* Définition de la couleur de fond du corps */
+body {
+    background-color: var(--bs-body-bg);
+}
+
+/* Styles pour la section d'authentification */
+#auth {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Styles pour le côté droit de l'authentification */
+#auth #auth-right {
+    height: 100%;
+    background: url(./png/4853433.png), linear-gradient(90deg, #2d499d, #3f5491);
+}
+
+/* Styles pour le côté gauche de l'authentification */
+#auth #auth-left {
+    padding: 5rem;
+}
+
+/* Titre de l'authentification */
+#auth #auth-left .auth-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* Sous-titre de l'authentification */
+#auth #auth-left .auth-subtitle {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    color: #a8aebb;
+}
+
+/* Logo de l'authentification */
+#auth #auth-left .auth-logo {
+    margin-bottom: 7rem;
+}
+
+#auth #auth-left .auth-logo img {
+    height: 2rem;
+}
+
+/* Media queries pour les écrans plus petits */
+@media screen and (max-width: 1399.9px) {
+    #auth #auth-left {
+        padding: 3rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #auth #auth-left {
+        padding: 5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #auth #auth-left {
+        padding: 5rem 3rem;
+    }
+}
+
+/* Styles pour le thème sombre */
+html[data-bs-theme="dark"] #auth-right {
+    background: url(./png/4853433.png), linear-gradient(90deg, #2d499d, #3f5491);
+}
