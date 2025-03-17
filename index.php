@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Stages</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../STAGE-SIO1/css/styles.css">
 </head>
 <body>
     <header>
@@ -22,8 +22,12 @@
                 <p>Votre avenir commence ici</p>
             </div>
             <div class="buttons">
-                <button>Se connecter</button>
+                <div class="login">
+                    <button>Se connecter</button>
+                </div>
+                <div class="sign">
                 <button>S'inscrire</button>
+                </div>
             </div>
         </div>
     </header>
