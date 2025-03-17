@@ -17,18 +17,35 @@ nav ul {
     display: flex;
     justify-content: center;
 }
-nav a:hover {
-    background-color: rgba(83, 69, 69, 0.747); 
-}
 nav ul li {
     margin: 0 30px;
 }
 
 nav ul li a {
+    position: relative;
     color: white;
     text-decoration: none;
+    font-size: 18px;
     font-weight: bold;
-    font-size: x-large;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #5f73e6;
+    transition: width 0.3s ease-in-out;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #467ec9;
 }
 
 .banner {

@@ -11,22 +11,15 @@
         <nav>
             <ul>
                 <li><a href="../index.php">Accueil</a></li>
-                <li><a href="/STAGE-SIO1/pages/offer.php">Offres de stage</a></li>
                 <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
                 <li><a href="/STAGE-SIO1/pages/review.php">Témoignages</a></li>
+                <li><a href="/STAGE-SIO1/pages/gestion.php">Gestion de vos offres de stage</a></li>
             </ul>
         </nav>
-        <div class="banner">
-            <div class="titleMain">
-                <h1>Gestion de stages</h1>
-                <p>Votre avenir commence ici</p>
-            </div>
-            <div class="buttons">
-                <button>Se connecter</button>
-                <button>S'inscrire</button>
-            </div>
-        </div>
     </header>
+    <main>
+        
+    </main>
     <footer>
         <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
     </footer>
