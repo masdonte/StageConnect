@@ -10,10 +10,10 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/index.php">Accueil</a></li>
-                <li><a href="/pages/offer.php">Offres de stage</a></li>
-                <li><a href="/pages/apply.php">Postuler</a></li>
-                <li><a href="/pages/review.php">Témoignages</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="/STAGE-SIO1/pages/offer.php">Offres de stage</a></li>
+                <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
+                <li><a href="/STAGE-SIO1/pages/review.php">Témoignages</a></li>
             </ul>
         </nav>
         <div class="banner">
