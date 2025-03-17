@@ -1,37 +1,23 @@
+<form method="get" action="">
+    <div>
+        <input type="text" name="login"><label for="login">Insérez votre nom d'utilisateur</label>
+        <br> <input type="password" name="password"><label for="password">Insérez votre mot de passe</label>
+    </div>
+    <input type="submit" value="Se connecter">
+    <input type="checkbox" id="horns" name="horns" />
 
-<!DOCTYPE html> 
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des Stages</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/index.php">Accueil</a></li>
-                <li><a href="/pages/offer.php">Offres de stage</a></li>
-                <li><a href="/pages/apply.php">Postuler</a></li>
-                <li><a href="/pages/review.php">Témoignages</a></li>
-            </ul>
-        </nav>
-        <div class="banner">
-            <div class="titleMain">
-                <h1>Gestion de stages</h1>
-                <p>Votre avenir commence ici</p>
-            </div>
-            <div class="buttons">
-                <button>Se connecter</button>
-                <button>S'inscrire</button>
-            </div>
-        </div>
-    </header>
-    <footer>
-        <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
-    </footer>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+</form>
+
+<?php
+
+
+if (isset($_GET["login"]) && $_GET["login"] === "admin" && $_GET["password"] === "1234") {
+    session_start();
+    $_SESSION["username"] = $_GET["login"];
+    header(header: "Location: dashboard.php");
+}
+
+$value = 'valeur de test';
+setcookie("moncookie", $value, time() + 3600);
+?>
+
