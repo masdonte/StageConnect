@@ -123,6 +123,7 @@ img {
   border-radius: 1rem;
   z-index: 1;
   transition: border-color .4s;
+  color:white;
 }
 
 .login__input:autofill {
@@ -179,43 +180,6 @@ img {
 .login__button:hover {
   background-color: var(--first-color-alt);
   box-shadow: 0 8px 24px hsla(208, 92%, 32%, .3);
-}
-
-.login__social {
-  margin-bottom: 2rem;
-}
-
-.login__social-title {
-  text-align: center;
-  font-size: var(--small-font-size);
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
-  margin-bottom: 1rem;
-}
-
-.login__social-img {
-  width: 1rem;
-}
-
-.login__social-links {
-  display: flex;
-  justify-content: center;
-  column-gap: 1.5rem;
-}
-
-.login__social-link {
-  width: 32px;
-  height: 32px;
-  background-color: var(--body-color);
-  box-shadow: 0 4px 8px hsla(0, 0%, 0%, .1);
-  border-radius: .5rem;
-  display: grid;
-  place-items: center;
-  transition: transform .4s;
-}
-
-.login__social-link:hover {
-  transform: translateY(-.25rem);
 }
 
 .login__switch {
