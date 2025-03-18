@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 18 mars 2025 à 11:06
+-- Généré le : mar. 18 mars 2025 à 15:15
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `challenge`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `avis`
+--
+
+CREATE TABLE `avis` (
+  `id` int(11) NOT NULL,
+  `Mail` text NOT NULL,
+  `Date` date NOT NULL,
+  `Avis` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `avis`
+--
+
+INSERT INTO `avis` (`id`, `Mail`, `Date`, `Avis`) VALUES
+(0, '', '0000-00-00', ''),
+(1, '', '0000-00-00', ''),
+(0, '', '0000-00-00', 'dddd'),
+(0, '', '0000-00-00', 'Très bon site internet ! '),
+(0, '', '0000-00-00', 'très bon site'),
+(0, '', '0000-00-00', 'ok'),
+(0, '', '0000-00-00', 'dsqdsq');
 
 -- --------------------------------------------------------
 
