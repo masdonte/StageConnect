@@ -1,13 +1,5 @@
 
 /* parti de creation des offres de stages */
-*{
-    margin: 0;
-    border: 0;
-    padding: 0;
-    outline: 0;
-    font-family: 'Rubik', sans-serif;
-  }
-  
   *, *:after, *:before{
     box-sizing: border-box;
   }
@@ -34,6 +26,8 @@
     padding: 1.5rem;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
   
   .card-img-holder{
@@ -87,6 +81,12 @@
     background: #EEF7FE;
     color: #22215B;
     cursor: pointer;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; 
+    justify-content:space-evenly; 
   }
 
 
