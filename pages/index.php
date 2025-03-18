@@ -1,23 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des Stages</title>
+
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="/STAGE-SIO1/css/index.css">
+
+    <title>StageConnect</title>
+    <nav>
+        <a class="logo">StageConnect<span>.</span></a>
+        <ul class="menu-lien">
+            <li><a href="/STAGE-SIO1/pages/index.php">Accueil</a></li>
+            <li><a href="/STAGE-SIO1/pages/offer.php">Offres de stage</a></li>
+            <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
+            <li><a href="/STAGE-SIO1/pages/review.php">Avis</a></li>
+        </ul>
+    </nav>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/STAGE-SIO1/pages/index.php">Accueil</a></li>
-                <li><a href="/STAGE-SIO1/pages/offer.php">Offres de stage</a></li>
-                <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
-                <li><a href="/STAGE-SIO1/pages/review.php">Avis</a></li>
-            </ul>
-        </nav>
-        <?php
+    <?php
         if (isset($connected)) {
             ?>
             
@@ -35,12 +38,10 @@
         </div>
         <?php }
         ?>
-        
-    </header>
-    <footer>
-        <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
-    </footer>
-    
+    <!--=============== MAIN JS ===============-->
     <script src="script.js"></script>
 </body>
+    <footer>
+      <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
+   </footer>
 </html>
