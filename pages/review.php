@@ -1,25 +1,25 @@
 <?php include('./config.php'); ?>
 <?php
 
-            $stmt = $conn->query("SELECT * FROM avis");
-            $stmt->execute();
-            $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $conn->query("SELECT * FROM avis");
+$stmt->execute();
+$produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            if(isset($_POST["input"])) {
+if (isset($_POST["input"])) {
 
-                // Préparation de la requête
-                $stmt = $conn->prepare("INSERT INTO avis (Avis) VALUES (:avis)");
-                // Lier les paramètres
-                // $Mail = $_POST[];
-                $Avis = $_POST['input'];
-                $stmt->bindParam(':avis',$Avis);
-                // $stmt->bindParam(':Mail', $Avis);
-                
-                // Exécuter la requête
-                $stmt->execute();
-                header("location: index.php");
-            }
-            ?>
+    // Préparation de la requête
+    $stmt = $conn->prepare("INSERT INTO avis (Avis) VALUES (:avis)");
+    // Lier les paramètres
+    // $Mail = $_POST[];
+    $Avis = $_POST['input'];
+    $stmt->bindParam(':avis', $Avis);
+    // $stmt->bindParam(':Mail', $Avis);
+
+    // Exécuter la requête
+    $stmt->execute();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -39,6 +39,9 @@
 </head>
 
 <body>
+
+
+
     <!--=============== LOGIN IMAGE ===============-->
     <svg class="login__blob" viewBox="0 0 566 840" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0" mask-type="alpha">
@@ -66,12 +69,12 @@
             <h1 class="login__title">Donnez votre avis</h1>
 
             <div class="login__area">
-                <form  method="post" class="login__form">
+                <form method="post" class="login__form">
                     <div class="login__content grid">
                     </div>
 
                     <div class="login__box">
-                        <input type="text"  placeholder=" " class="login__input" name="input" required>
+                        <input type="text" placeholder=" " class="login__input" name="input" required>
                         <label for="text" class="login__label">Votre avis</label>
 
                         <i class="ri-eye-off-fill login__icon login__password" id="loginPassword"></i>
@@ -80,8 +83,27 @@
 
             <button type="submit" class="login__button">Publiez votre avis</button>
             </form>
+            <!--===== SECTION DES AVIS =====-->
 
-            
+            <div class="login__reviews">
+                <h2 class="login__reviews-title">Avis des clients</h2>
+                <ul class="login__reviews-list">
+
+                    <?php $stmt = $conn->prepare("SELECT * FROM Avis ORDER BY id DESC LIMIT 3 ");
+                    $stmt->execute();
+                    $avis = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($avis as $review) {
+                        echo "<li>" . $review["Avis"] . " : " . $review["Mail"] . "</li>";
+                    }
+                    ?>
+
+
+
+                    <!-- Vous pouvez ajouter d'autres avis ici -->
+                </ul>
+            </div>
+
+
         </div>
     </div>
     <!--=============== MAIN JS ===============-->
