@@ -51,8 +51,8 @@
                <form action="" class="login__form">
                   <div class="login__content grid">
                      <div class="login__box">
-                        <input type="email" id="email" required placeholder=" " class="login__input">
-                        <label for="email" class="login__label">Identifiant</label>
+                        <input type="mail" id="email" required placeholder=" " class="login__input">
+                        <label for="mail" class="login__label">E-mail</label>
             
                         <i class="ri-mail-fill login__icon"></i>
                      </div>
@@ -77,7 +77,33 @@
                </p>
             </div>
          </div>
-
+         <?php
+         session_start();
+         try {
+            $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
+        
+            //Configuration de PDO pour permettre la bonne gestion des erreurs
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Erreur : " . $e->getMessage());
+        }
+         
+         // Récupérer les données du formulaire
+         $email = $_POST['email'] ?? '';
+         $password = $_POST['password'] ?? '';
+         
+         // Vérifier si l'utilisateur existe
+         $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE mail = ?");
+         $stmt->execute([$email]);
+         $user = $stmt->fetch();
+         
+         if ($user && password_verify($password, $user['password'])) {
+             $_SESSION['user_id'] = $user['id']; // Stocke l'utilisateur en session
+             echo json_encode(["success" => true, "message" => "Connexion réussie"]);
+         } else {
+             echo json_encode(["success" => false, "message" => "Identifiants incorrects"]);
+         }
+         ?>
          <!--===== LOGIN REGISTER =====-->
          <div class="login__register">
             <h1 class="login__title">Créer un compte.</h1>
