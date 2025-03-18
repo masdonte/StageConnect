@@ -56,24 +56,10 @@ button {
 }
 
 body {
-  background-color: #19191B;
-  color: var(--text-color);
-}
-
-input,
-button {
-  border: none;
-  outline: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  height:100vh;
+  background-image: url("background-index.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -87,7 +73,7 @@ img {
   gap: 1rem;
 }
 
-/* Nav */
+/*=============== NAV ===============*/
 
 nav {
   background-color: #19191B;
