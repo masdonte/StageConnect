@@ -29,6 +29,16 @@ try {
             </ul>
         </nav>
     </header>
+    <main>
+        <div class="gestion">
+            <div class="modifier">
+                <h3>Modifier/Supprimer vos offres de stage</h3>
+            </div>
+            <div class="ajouter">
+                <h3>Ajouter des offres de stage</h3>
+            </div>
+        </div>
+    </main>
     <footer>
         <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
     </footer>
