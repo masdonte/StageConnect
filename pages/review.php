@@ -17,7 +17,6 @@ if (isset($_POST["input"])) {
 
     // Exécuter la requête
     $stmt->execute();
-    header("location: index.php");
 }
 ?>
 
@@ -94,9 +93,17 @@ if (isset($_POST["input"])) {
             <div class="login__reviews">
                 <h2 class="login__reviews-title">Avis des clients</h2>
                 <ul class="login__reviews-list">
-                    <li><?php echo $_POST['input']?></li>
-                    <li>Deuxième avis : J'ai adoré mon expérience.</li>
-                    <li>Troisième avis : Je recommande vivement !</li>
+
+                    <?php $stmt = $conn->prepare("SELECT * FROM Avis ORDER BY id DESC LIMIT 3 ");
+                    $stmt->execute();
+                    $avis = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($avis as $review) {
+                        echo "<li>" . $review["Avis"] . " : " . $review["Mail"] . "</li>";
+                    }
+                    ?>
+
+
+
                     <!-- Vous pouvez ajouter d'autres avis ici -->
                 </ul>
             </div>
