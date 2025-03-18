@@ -49,18 +49,20 @@
             <h1 class="login__title">Donnez votre avis</h1>
 
             <div class="login__area">
-                <form action="" class="login__form">
+                <form action="index.php" method="post" class="login__form">
                     <div class="login__content grid">
-
-
-                        <i class="ri-mail-fill login__icon"></i>
                     </div>
 
                     <div class="login__box">
-                        <input type="text" required placeholder=" " class="login__input">
+                        <input type="text" required placeholder=" " class="login__input" name="input">
                         <label for="text" class="login__label">Votre avis</label>
 
 
+                        <?php
+
+
+
+                        ?>
                         <i class="ri-eye-off-fill login__icon login__password" id="loginPassword"></i>
                     </div>
             </div>
@@ -72,10 +74,10 @@
     </div>
     <!--=============== MAIN JS ===============-->
 
-    <script src="../js/review.js"></script>
 </body>
 <footer>
     <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
 </footer>
+
 
 </html>
