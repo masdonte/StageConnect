@@ -33,6 +33,7 @@ try {
         <div class="gestion">
             <div class="modifier">
                 <h3>Modifier/Supprimer vos offres de stage</h3>
+                
             </div>
             <div class="ajouter">
                 <h3>Ajouter des offres de stage</h3>
