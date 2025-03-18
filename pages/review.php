@@ -33,14 +33,9 @@
     <link rel="stylesheet" href="..\css\review.css">
 
     <title>StageConnect</title>
-    <nav>
-        <ul>
-            <li><a href="/STAGE-SIO1/pages/index.php">Accueil</a></li>
-            <li><a href="/STAGE-SIO1/pages/offer.php">Offres de stage</a></li>
-            <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
-            <li><a href="/STAGE-SIO1/pages/review.php">Avis</a></li>
-        </ul>
-    </nav>
+    <?php
+        include "../include/header.php";
+    ?>
 </head>
 
 <body>

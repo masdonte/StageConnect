@@ -1,3 +1,34 @@
+<?php
+      session_start();
+
+      try {
+         $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
+         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch (PDOException $e) {
+         die("Erreur : " . $e->getMessage());
+      }
+
+      // Vérifier si le formulaire est soumis
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+         $email = $_POST['email'] ?? '';
+         $password = $_POST['password'] ?? '';
+
+         // Vérifier si l'utilisateur existe dans la base
+         $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE Mail = :email");
+         $stmt->bindParam(":email", $email);
+         $stmt->execute();
+         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+         // Vérifier le mot de passe
+         if ($user && hash('sha256', $password) === $user['Mot_de_Passe']) {
+            $_SESSION['user_id'] = $user['Identifiant']; // Stocker l'ID de l'utilisateur en session
+            $_SESSION["nom"]=$email;
+            $_SESSION["connected"]=true;
+         } else {
+            $connecte = false;
+         }
+      }
+      ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,16 +43,9 @@
    <link rel="stylesheet" href="..\css\login.css">
 
    <title>StageConnect</title>
-   <nav>
-      <a class="logo">StageConnect<span>.</span></a>
-      <ul>
-         <li>StageConnect.</li>
-         <li><a href="/STAGE-SIO1/pages/index.php">Accueil</a></li>
-         <li><a href="/STAGE-SIO1/pages/offer.php">Offres de stage</a></li>
-         <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
-         <li><a href="/STAGE-SIO1/pages/review.php">Avis</a></li>
-      </ul>
-   </nav>
+  <?php
+  include "../include/header.php";
+  ?>
 </head>
 
 <body>
@@ -65,9 +89,6 @@
                   <i class="ri-eye-off-fill login__icon login__password" id="loginPassword"></i>
                </div>
             </div>
-
-               <a href="#" class="login__forgot">Mot de passe oublié ?</a>
-
                <button type="submit" class="login__button">Connexion</button>
             </form>
 
@@ -78,36 +99,6 @@
             </p>
          </div>
       </div>
-      <?php
-      session_start();
-
-      try {
-         $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
-         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      } catch (PDOException $e) {
-         die("Erreur : " . $e->getMessage());
-      }
-
-      // Vérifier si le formulaire est soumis
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-         $email = $_POST['email'] ?? '';
-         $password = $_POST['password'] ?? '';
-
-         // Vérifier si l'utilisateur existe dans la base
-         $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE Mail = :email");
-         $stmt->bindParam(":email", $email);
-         $stmt->execute();
-         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-         // Vérifier le mot de passe
-         if ($user && hash('sha256', $password) === $user['Mot_de_Passe']) {
-            $_SESSION['user_id'] = $user['Identifiant']; // Stocker l'ID de l'utilisateur en session
-            echo ("tkt");
-         } else {
-            echo ("pas tkt");
-         }
-      }
-      ?>
 
       <!--===== LOGIN REGISTER =====-->
       <div class="login__register">
