@@ -12,6 +12,7 @@
       
       <title>StageConnect</title>
       <nav>
+         <a class = "logo">StageConnect<span>.</span></a>
          <ul>
              <li>StageConnect.</li>
              <li><a href="/STAGE-SIO1/pages/index.php">Accueil</a></li>

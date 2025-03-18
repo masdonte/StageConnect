@@ -1,3 +1,25 @@
+<?php include('./config.php'); ?>
+<?php
+
+            $stmt = $conn->query("SELECT * FROM avis");
+            $stmt->execute();
+            $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if(isset($_POST["input"])) {
+
+                // Préparation de la requête
+                $stmt = $conn->prepare("INSERT INTO avis (Avis) VALUES (:avis)");
+                // Lier les paramètres
+                // $Mail = $_POST[];
+                $Avis = $_POST['input'];
+                $stmt->bindParam(':avis',$Avis);
+                // $stmt->bindParam(':Mail', $Avis);
+                
+                // Exécuter la requête
+                $stmt->execute();
+                header("location: index.php");
+            }
+            ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -49,20 +71,14 @@
             <h1 class="login__title">Donnez votre avis</h1>
 
             <div class="login__area">
-                <form action="index.php" method="post" class="login__form">
+                <form  method="post" class="login__form">
                     <div class="login__content grid">
                     </div>
 
                     <div class="login__box">
-                        <input type="text" required placeholder=" " class="login__input" name="input">
+                        <input type="text"  placeholder=" " class="login__input" name="input" required>
                         <label for="text" class="login__label">Votre avis</label>
 
-
-                        <?php
-
-
-
-                        ?>
                         <i class="ri-eye-off-fill login__icon login__password" id="loginPassword"></i>
                     </div>
             </div>
@@ -70,6 +86,7 @@
             <button type="submit" class="login__button">Publiez votre avis</button>
             </form>
 
+            
         </div>
     </div>
     <!--=============== MAIN JS ===============-->
