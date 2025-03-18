@@ -106,6 +106,51 @@ img {
   margin-bottom: 2rem;
 }
 
+.login {
+  display: flex;
+  /* Utiliser flex pour aligner le formulaire et les avis */
+  justify-content: space-between;
+  /* Espacement entre le formulaire et les avis */
+}
+
+.login__access {
+  flex: 1;
+  /* Prendre 1 part de l'espace disponible */
+  margin-right: 2rem;
+  /* Espacement à droite */
+}
+
+.login__reviews {
+  flex: 1;
+  /* Prendre 1 part de l'espace disponible */
+  background-color: #303136;
+  /* Couleur de fond pour la section des avis */
+  border-radius: 1rem;
+  /* Coins arrondis */
+  padding: 1.5rem;
+  /* Espacement interne */
+  color: #EEEEF0;
+  /* Couleur du texte */
+}
+
+.login__reviews-title {
+  font-size: var(--big-font-size);
+  margin-bottom: 1rem;
+  /* Espacement en bas */
+}
+
+.login__reviews-list {
+  list-style-type: none;
+  /* Pas de puces */
+  padding: 0;
+  /* Pas de padding */
+}
+
+.login__reviews-list li {
+  margin-bottom: 0.5rem;
+  /* Espacement entre les avis */
+}
+
 .login__box {
   position: relative;
   display: flex;
@@ -126,7 +171,7 @@ img {
 }
 
 .login__input:autofill {
-  transition: background-color 6000s, color 6000s;
+  transition: backgrounda-color 6000s, color 6000s;
 }
 
 .login__label {
@@ -203,6 +248,7 @@ img {
   column-gap: 1.5rem;
 }
 
+
 .login__social-link {
   width: 32px;
   height: 32px;
@@ -236,7 +282,7 @@ img {
   color: var(--first-color-alt);
 }
 
-.login__access, 
+.login__access,
 .login__register {
   position: absolute;
   left: 0;
@@ -252,7 +298,7 @@ img {
 }
 
 /* Input focus move up label */
-.login__input:focus ~ .login__label {
+.login__input:focus~.login__label {
   transform: translateY(-12px);
   font-size: var(--tiny-font-size);
 }
@@ -262,7 +308,7 @@ img {
 }
 
 /* Input focus sticky top label */
-.login__input:not(:placeholder-shown).login__input:not(:focus) ~ .login__label {
+.login__input:not(:placeholder-shown).login__input:not(:focus)~.login__label {
   transform: translateY(-12px);
   font-size: var(--tiny-font-size);
 }
@@ -276,8 +322,8 @@ img {
   border-color: var(--first-color);
 }
 
-.login__input:focus ~ .login__label,
-.login__input:focus ~ .login__icon {
+.login__input:focus~.login__label,
+.login__input:focus~.login__icon {
   color: var(--first-color);
 }
 
@@ -326,20 +372,25 @@ img {
     width: 460px;
     margin: initial;
   }
-  .login__access, 
+
+  .login__access,
   .login__register {
     width: 600px;
   }
+
   .login__title {
     text-align: initial;
     margin-bottom: 3rem;
   }
+
   .login__button {
     margin-bottom: 3rem;
   }
+
   .login__group {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .login__blob {
     display: block;
     height: 100vh;
@@ -347,6 +398,7 @@ img {
     top: 10;
     right: 0;
   }
+
   .login__img {
     transform: translate(0rem, 0rem);
   }
@@ -359,6 +411,7 @@ nav {
   padding: 30px;
   text-align: center;
 }
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -380,6 +433,7 @@ nav ul li a {
   padding: 10px 15px;
   transition: color 0.3s;
 }
+
 nav ul li a::after {
   content: "";
   position: absolute;
@@ -390,6 +444,7 @@ nav ul li a::after {
   background-color: #5f73e6;
   transition: width 0.3s ease-in-out;
 }
+
 nav ul li a:hover::after {
   width: 100%;
 }
