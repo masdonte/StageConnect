@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+      <link rel="stylesheet" href="..\css\login.css">
       
       <title>StageConnect</title>
       <nav>
@@ -116,19 +116,19 @@
                      </div>
                   </div>
    
-                  <button type="submit" class="login__button">Create account</button>
+                  <button type="submit" class="login__button">Créer un compte</button>
                </form>
    
                <p class="login__switch">
-                  Already have an account? 
-                  <button id="loginButtonAccess">Log In</button>
+                  Déjà un compte? 
+                  <button id="loginButtonAccess">Se connecter</button>
                </p>
             </div>
          </div>
       </div>
       
       <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
+      <script src="../js/login.js"></script>
    </body>
    <footer>
       <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
