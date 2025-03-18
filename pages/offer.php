@@ -24,10 +24,10 @@ $stmt = $pdo->prepare("SELECT * FROM offre");
     <header>
         <nav>
             <ul>
-                <li><a href="/STAGE-SIO1/pages/index.php">Accueil</a></li>
+                <li><a href="../index.php">Accueil</a></li>
                 <li><a href="/STAGE-SIO1/pages/gestion.php">Gestion de vos offres de stage</a></li>
                 <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
-                <li><a href="/STAGE-SIO1/pages/review.php">Avis</a></li>
+                <li><a href="/STAGE-SIO1/pages/review.php">Témoignages</a></li>
             </ul>
         </nav>
     </header>
