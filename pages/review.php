@@ -91,7 +91,7 @@ if (isset($_POST["input"])) {
                 <h2 class="login__reviews-title">Avis des clients</h2>
                 <ul class="login__reviews-list">
 
-                    <?php $stmt = $conn->prepare("SELECT * FROM Avis ORDER BY id DESC LIMIT 3 ");
+                    <?php $stmt = $conn->prepare("SELECT * FROM Avis ORDER BY identifiant_id DESC LIMIT 3 ");
                     $stmt->execute();
                     $avis = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($avis as $review) {
