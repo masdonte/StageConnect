@@ -1,1 +1,269 @@
 /* parti de creation des offres de stages */
+
+
+*,
+*:after,
+*:before {
+
+
+    box-sizing: border-box;
+
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+    html {
+
+
+        font-size: 15px
+    }
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 465px) {
+
+
+    html {
+
+
+        font-size: 14px
+    }
+
+
+}
+
+
+
+
+
+
+
+
+.card {
+
+
+    width: 25rem;
+
+
+    height: auto;
+
+
+    background: #fff;
+
+
+    border-radius: 1.5rem;
+
+
+    padding: 1.5rem;
+
+
+    overflow: hidden;
+
+
+    position: relative;
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+}
+
+
+
+
+
+.card-img-holder {
+
+
+    width: 100%;
+
+
+    height: auto;
+
+
+    position: relative;
+
+
+}
+
+
+
+
+
+.card-img-holder img {
+
+
+    width: 100%;
+
+
+    height: auto;
+
+
+    max-height: 15rem;
+
+
+    object-fit: cover;
+
+
+    border-radius: 1.5rem;
+
+
+}
+
+
+
+
+
+.blog-title {
+
+
+    color: #22215B;
+
+
+    padding: 1rem 0;
+
+
+    font-size: 1.5rem;
+
+
+}
+
+
+
+
+
+.description {
+
+
+    padding: 1rem 0;
+
+
+    color: #22215B80;
+
+
+    font-size: 1rem;
+
+
+}
+
+
+
+
+
+.blog-time {
+
+
+    font-size: .8rem;
+
+
+    color: #22215B;
+
+
+}
+
+
+
+
+
+.options {
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    justify-content: space-between;
+
+
+    font-size: 1rem;
+
+
+}
+
+
+
+
+
+.options span {
+
+
+    font-weight: 600;
+
+
+    color: #22215B;
+
+
+}
+
+
+
+
+
+.btn {
+
+
+    font-size: 1rem;
+
+
+    padding: .5rem 1rem;
+
+
+    border-radius: .5rem;
+
+
+    font-weight: 400;
+
+
+    background: #EEF7FE;
+
+
+    color: #22215B;
+
+
+    cursor: pointer;
+
+
+}
+
+
+main {
+
+
+    display: flex;
+
+
+    flex-wrap: wrap;
+
+
+    gap: 2rem;
+
+
+    justify-content: space-evenly;
+
+
+}
+
+
+
+
+
+/* fin de la partie bouton je vais CREER un autre style je pense */
