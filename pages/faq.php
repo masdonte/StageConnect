@@ -11,7 +11,7 @@ include "../include/header.php";
 </head>
 <!--=============== CSS ===============-->
 <link rel="stylesheet" href="/STAGE-SIO1/css/index.css">
-<link rel="stylesheet" href=../css/faq.css">
+<link rel="stylesheet" href="../css/faq.css">
 
 
 <body>
@@ -19,34 +19,29 @@ include "../include/header.php";
 
         <h1 class="titre">Toutes vos réponses à vos questions.</h1>
 
-        <h2>Qui sont les créateurs du site ?</h2>
+        <h2>Comment se connecter ? </h2>
+        <p>Pour se connecter, vous devez vous créez un compte ou sinon vous connectez directement, suite à ça vous pourrez acceder à notre plateforme StageConnect</p>
 
-        <h2>Comment rédiger un CV efficace pour le marché marocain ?</h2>
-        <p>Pour rédiger un CV efficace, il est important d'adapter votre CV au poste visé, d'utiliser un format clair et
-            professionnel, de mettre en avant vos expériences pertinentes et vos compétences clés, et d'inclure une
-            lettre de motivation personnalisée.</p>
+        <h2>A quoi sert notre site internet ? </h2>
+        <p>Cela vous permet d'acceder à de nombreuse offres des différentes entreprise en fonction de votre spécialité, vous pourrez donc postuler directement pour un stage.</p>
 
-        <h2>Quels sont les meilleurs conseils pour réussir un entretien d'embauche ?</h2>
-        <p>Pour réussir un entretien, préparez-vous en recherchant l'entreprise, en pratiquant vos réponses aux
-            questions courantes, en vous habillant de manière appropriée et en posant des questions pertinentes à
-            l'intervieweur.</p>
+        <h2>Qui sont les créateurs de cette plateforme ?</h2>
+        <p>Les créateurs de cette plateforme sont Kamdine, Valentin, Réda et Célina.</p>
 
-        <h2>Comment se préparer aux tests de recrutement ?</h2>
-        <p>Pour vous préparer aux tests de recrutement, familiarisez-vous avec le type de tests que l'entreprise
-            utilise, pratiquez des tests similaires en ligne, et assurez-vous de bien comprendre les compétences
-            évaluées.</p>
+        <h2>Pouvez-vous voir les avis ou communiquer directement entre vous ?</h2>
+        <p>Vous pouvez écrire différentes avis tout simplement en étant connecter qui vous permez de partager votre expérience ou votre avis sur notre plateforme.</p>
 
         <h2>Quelles sont les erreurs à éviter lors de la recherche d'emploi ?</h2>
-        <p>Évitez d'envoyer des candidatures génériques, de négliger votre présence en ligne (comme LinkedIn), de ne pas
+        <p>Évitez d'envoyer des candidatures génériques,de ne pas
             suivre les instructions de candidature, et de ne pas préparer d'entretien.</p>
 
-        <h2>Comment développer son réseau professionnel au Maroc ?</h2>
-        <p>Pour développer votre réseau, participez à des événements professionnels, rejoignez des groupes sur les
-            réseaux sociaux, assistez à des conférences et n'hésitez pas à contacter des professionnels de votre secteur
-            pour échanger des idées et des conseils.</p>
+        <h2>Quelle est le but de ce site internet ?</h2>
+        <p>Nous avons créer ce site internet dans le but d'aider toute personnes en BTS SIO dans la recherche d'un stage.</p>
     </div>
 
 
 </body>
-
+<footer>
+  <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
+</footer>
 </html>
