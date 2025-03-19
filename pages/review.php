@@ -114,12 +114,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
 
         </div>
     </div>
-    <!--=============== MAIN JS ===============-->
 
+    <?php include('../include/footer.php'); ?>
 </body>
-<footer>
-    <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
-</footer>
 
 
 </html>
