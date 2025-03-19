@@ -23,7 +23,7 @@
         Facilitez la gestion des stages étudiants avec notre plateforme intuitive.
         <br>Suivez, organisez et optimisez chaque étape en toute simplicité !
       </p>
-      <button><a href="..\pages\login.php" class=button-connect>Se connecter</button>
+      <a href="..\pages\login.php"><button class="button-connect">Se connecter</button></a>
     </div>
   </section>
 </body>
