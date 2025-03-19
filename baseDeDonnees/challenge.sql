@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 19 mars 2025 à 10:39
+-- Généré le : mer. 19 mars 2025 à 13:45
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -33,6 +33,20 @@ CREATE TABLE `avis` (
   `Date` date NOT NULL,
   `Avis` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `avis`
+--
+
+INSERT INTO `avis` (`identifiant_id`, `Mail`, `Date`, `Avis`) VALUES
+(1, '', '0000-00-00', 'b,n '),
+(2, '', '0000-00-00', 'b,n '),
+(3, '', '0000-00-00', 'fazfazfza'),
+(4, '', '0000-00-00', 'afzazffaz'),
+(5, 'test@test.com', '0000-00-00', 'afzazffaz'),
+(6, 'test@test.com', '0000-00-00', 'test'),
+(7, 'test@test.com', '0000-00-00', 'je m&#039;appel fati'),
+(8, 'test@test.com', '0000-00-00', 'J&#039;aime pas ce site');
 
 -- --------------------------------------------------------
 
@@ -166,6 +180,14 @@ CREATE TABLE `utilisateur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`Identifiant`, `Mot_de_Passe`, `Mail`, `Nom`, `Prenom`, `Specialite`, `Ecole`, `Numero_de_Telephone`, `Nom_de_l_organisation`, `Descriptif_du_stage`, `Competence_Utile`, `Option_demande`, `Adresse`, `Nombre_de_Stagiaire`, `Actif`, `Classe`, `CV`, `Lettre_de_Motivation`) VALUES
+(1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'admin@t.d', 'Avis', 'Nom', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'afzzfafaz@faz.cza', 'dazz', 'azdd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -244,7 +266,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `avis`
 --
 ALTER TABLE `avis`
-  MODIFY `identifiant_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `identifiant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `droit_des_utilisateurs`
@@ -274,7 +296,7 @@ ALTER TABLE `type_utilisateur`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `Identifiant` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Identifiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
