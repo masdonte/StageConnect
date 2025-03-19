@@ -108,12 +108,14 @@
             <form action="" class="login__form">
                <div class="login__content grid">
                   <div class="login__group grid">
+
                      <div class="login__box">
                         <input type="text" id="names" required placeholder=" " class="login__input">
                         <label for="names" class="login__label">Nom</label>
 
                         <i class="ri-id-card-fill login__icon"></i>
                      </div>
+
 
                      <div class="login__box">
                         <input type="text" id="surnames" required placeholder=" " class="login__input">
@@ -123,6 +125,7 @@
                      </div>
                   </div>
 
+
                   <div class="login__box">
                      <input type="email" id="emailCreate" required placeholder=" " class="login__input">
                      <label for="emailCreate" class="login__label">Email</label>
@@ -130,12 +133,14 @@
                      <i class="ri-mail-fill login__icon"></i>
                   </div>
 
+
                   <div class="login__box">
                      <input type="password" id="passwordCreate" required placeholder=" " class="login__input">
                      <label for="passwordCreate" class="login__label">Mot de Passe </label>
 
                      <i class="ri-eye-off-fill login__icon login__password" id="loginPasswordCreate"></i>
                   </div>
+                  
                </div>
 
                <button type="submit" class="login__button">Créer un compte</button>
