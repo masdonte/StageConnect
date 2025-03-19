@@ -131,7 +131,7 @@ button {
   }
 
   .main-section .content :is(h2, p) {
-    max-width: 100%;
+    max-width: 25%;
   }
 
   .main-section .content h2 {
@@ -139,7 +139,8 @@ button {
     line-height: 60px;
   }
   
-  .main-section .content button {width: 100%;
+  .main-section .content button {
+  width: 25%;
   display: inline-flex;
   justify-content: center;
   background-color: var(--first-color);
@@ -151,6 +152,8 @@ button {
   cursor: pointer;
   transition: background-color .4s, box-shadow .4s;}
 }
+
+
 
 /*=============== NAV ===============*/
 
