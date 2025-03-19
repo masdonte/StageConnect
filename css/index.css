@@ -84,7 +84,8 @@ button {
   margin-top: 15px;
 }
 
-.main-section .content button {width: 100%;
+.main-section .content button {
+  width: 25%;
   display: inline-flex;
   justify-content: center;
   background-color: var(--first-color);
@@ -94,11 +95,18 @@ button {
   border-radius: 4rem;
   margin-block: 2rem;
   cursor: pointer;
-  transition: background-color .4s, box-shadow .4s;}
+  transition: background-color .4s, box-shadow .4s;
+  border:none;
+}
 
 .main-section .content button:hover {
-  color: #fff;
-  background: #C06B3E;
+  background-color: var(--first-color-alt);
+  box-shadow: 0 8px 24px hsla(208, 92%, 32%, .3);
+}
+
+a {
+  text-decoration: none;
+  color:white;
 }
 
 @media (max-width: 768px) {
@@ -139,20 +147,7 @@ button {
     line-height: 60px;
   }
   
-  .main-section .content button {
-  width: 25%;
-  display: inline-flex;
-  justify-content: center;
-  background-color: var(--first-color);
-  color: var(--white-color);
-  font-weight: var(--font-semi-bold);
-  padding-block: 1.5rem;
-  border-radius: 4rem;
-  margin-block: 2rem;
-  cursor: pointer;
-  transition: background-color .4s, box-shadow .4s;}
 }
-
 
 
 /*=============== NAV ===============*/
