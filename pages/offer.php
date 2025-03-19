@@ -36,11 +36,22 @@ include('./config.php'); ?>
                 </h3>
                 <span class="blog-time"></span>
                 <p class="description">
-                    <?php echo $offre["Lieu_de_Stage"]; ?>
+                    <p>Lieu de Stage :<?php  echo $offre["Lieu_de_Stage"]; ?></p>
+            
+                    <p>Nom de l'entreprise :<?php echo $offre["Nom_de_l_entreprise"]; ?></p>
+                    
+                    <p>Adresse : <?php echo $offre["Adresse"]; ?></p>
+                    
+                   <p>Mail :<?php echo $offre["Mail"]; ?></p> 
+                    
+                    <p>Numéro de Téléphone :<?php echo $offre["Numero_de_telephone"]; ?></p>
+                   
                 </p>
                 <div class="options">
                     <span>
                         <?php echo $offre["Adresse"]; ?>
+                       
+
                     </span>
                     <button class="btn">Postuler</button>
                 </div>
