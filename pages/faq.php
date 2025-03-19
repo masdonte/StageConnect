@@ -19,10 +19,7 @@ include "../include/header.php";
 
         <h1 class="titre">Toutes vos réponses à vos questions.</h1>
 
-        <h2>Quelles compétences sont les plus recherchées par les employeurs au Maroc ?</h2>
-        <p>Les employeurs au Maroc recherchent souvent des compétences en communication, en gestion de projet, en
-            informatique (notamment le développement web et la cybersécurité), ainsi que des compétences linguistiques,
-            notamment en français et en anglais.</p>
+        <h2>Qui sont les créateurs du site ?</h2>
 
         <h2>Comment rédiger un CV efficace pour le marché marocain ?</h2>
         <p>Pour rédiger un CV efficace, il est important d'adapter votre CV au poste visé, d'utiliser un format clair et
