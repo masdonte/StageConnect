@@ -1,34 +1,69 @@
 <?php
-      session_start();
+session_start();
 
-      try {
-         $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
-         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      } catch (PDOException $e) {
-         die("Erreur : " . $e->getMessage());
-      }
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur : " . $e->getMessage());
+}
 
-      // Vérifier si le formulaire est soumis
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-         $email = $_POST['email'] ?? '';
-         $password = $_POST['password'] ?? '';
+// === 1. TRAITEMENT DE LA CONNEXION ===
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-         // Vérifier si l'utilisateur existe dans la base
-         $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE Mail = :email");
-         $stmt->bindParam(":email", $email);
-         $stmt->execute();
-         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Vérifier si l'utilisateur existe
+    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE Mail = :email");
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-         // Vérifier le mot de passe
-         if ($user && hash('sha256', $password) === $user['Mot_de_Passe']) {
-            $_SESSION['user_id'] = $user['Identifiant']; // Stocker l'ID de l'utilisateur en session
-            $_SESSION["nom"]=$email;
-            $_SESSION["connected"]=true;
-         } else {
-            $connecte = false;
-         }
-      }
-      ?>
+    // Vérifier le mot de passe
+    if ($user && hash('sha256', $password) === $user['Mot_de_Passe']) {
+        $_SESSION['user_id'] = $user['Mail'];  // Utilisation de l'email comme identifiant de session
+        $_SESSION["nom"] = $user['Prenom'];  // Stocker le prénom
+        $_SESSION["connected"] = true;
+        header("Location: index.php");  // Redirection après connexion
+        exit();
+    } else {
+        echo "<script>alert('Identifiants incorrects !');</script>";
+    }
+}
+
+// === 2. TRAITEMENT DE L'INSCRIPTION ===
+if (isset($_POST["names"]) && isset($_POST["surnames"]) && isset($_POST["email"]) && isset($_POST["password"])) {
+    $nom = htmlspecialchars($_POST["names"]);
+    $prenom = htmlspecialchars($_POST["surnames"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $password = hash("sha256", $_POST["password"]);  // Hashage sécurisé
+
+    // Vérifier si l'email existe déjà
+    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE Mail = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        echo "<script>alert('Cet email est déjà utilisé.');</script>";
+    } else {
+        // Insérer l'utilisateur
+        $stmt = $pdo->prepare("INSERT INTO utilisateur (Nom, Prenom, Mail, Mot_de_Passe) VALUES (:nom, :prenom, :email, :password)");
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':prenom', $prenom);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
+
+        if ($stmt->execute()) {
+            echo "<script>alert('Compte créé avec succès !');</script>";
+            header("Location: login.php");  // Redirection vers connexion
+            exit();
+        } else {
+            echo "<script>alert('Erreur lors de l\'inscription.');</script>";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -102,53 +137,47 @@
 
       <!--===== LOGIN REGISTER =====-->
       <div class="login__register">
-         <h1 class="login__title">Créer un compte.</h1>
+        <h1 class="login__title">Créer un compte</h1>
 
-         <div class="login__area">
-            <form action="" class="login__form">
-               <div class="login__content grid">
-                  <div class="login__group grid">
-                     <div class="login__box">
-                        <input type="text" id="names" required placeholder=" " class="login__input">
-                        <label for="names" class="login__label">Nom</label>
+        <div class="login__area">
+            <form method="post" class="login__form">
+                <div class="login__content grid">
+                    <div class="login__group grid">
+                        <div class="login__box">
+                            <input type="text" name="names" required placeholder=" " class="login__input">
+                            <label for="names" class="login__label">Nom</label>
+                            <i class="ri-id-card-fill login__icon"></i>
+                        </div>
 
-                        <i class="ri-id-card-fill login__icon"></i>
-                     </div>
+                        <div class="login__box">
+                            <input type="text" name="surnames" required placeholder=" " class="login__input">
+                            <label for="surnames" class="login__label">Prénom</label>
+                            <i class="ri-id-card-fill login__icon"></i>
+                        </div>
+                    </div>
 
-                     <div class="login__box">
-                        <input type="text" id="surnames" required placeholder=" " class="login__input">
-                        <label for="surnames" class="login__label">Prénom</label>
+                    <div class="login__box">
+                        <input type="email" name="email" required placeholder=" " class="login__input">
+                        <label for="emailCreate" class="login__label">Email</label>
+                        <i class="ri-mail-fill login__icon"></i>
+                    </div>
 
-                        <i class="ri-id-card-fill login__icon"></i>
-                     </div>
-                  </div>
+                    <div class="login__box">
+                        <input type="password" name="password" required placeholder=" " class="login__input">
+                        <label for="passwordCreate" class="login__label">Mot de Passe</label>
+                        <i class="ri-eye-off-fill login__icon login__password" id="loginPasswordCreate"></i>
+                    </div>
+                </div>
 
-                  <div class="login__box">
-                     <input type="email" id="emailCreate" required placeholder=" " class="login__input">
-                     <label for="emailCreate" class="login__label">Email</label>
-
-                     <i class="ri-mail-fill login__icon"></i>
-                  </div>
-
-                  <div class="login__box">
-                     <input type="password" id="passwordCreate" required placeholder=" " class="login__input">
-                     <label for="passwordCreate" class="login__label">Mot de Passe </label>
-
-                     <i class="ri-eye-off-fill login__icon login__password" id="loginPasswordCreate"></i>
-                  </div>
-               </div>
-
-               <button type="submit" class="login__button">Créer un compte</button>
+                <button type="submit" class="login__button">Créer un compte</button>
             </form>
 
             <p class="login__switch">
-               Déjà un compte?
-               <button id="loginButtonAccess">Se connecter</button>
+                Déjà un compte?
+                <button id="loginButtonAccess">Se connecter</button>
             </p>
-         </div>
-      </div>
-   </div>
-
+        </div>
+    </div>
    <!--=============== MAIN JS ===============-->
    <script src="../js/login.js"></script>
 </body>
