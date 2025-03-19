@@ -7,7 +7,7 @@
       <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
       <li><a href="/STAGE-SIO1/pages/review.php">Avis</a></li>
       <?php
-      if (isset($_SESSION["connected"])&&$_SESSION["connected"]) {
+      if (isset($_SESSION["connected"]) && $_SESSION["connected"]) {
          ?>
          <li>Bienvenue <?php
          echo $_SESSION["nom"];

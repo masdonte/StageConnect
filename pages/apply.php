@@ -1,29 +1,63 @@
+<?php
+session_start();
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
+
+    //Configuration de PDO pour permettre la bonne gestion des erreurs
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur : " . $e->getMessage());
+}
+$stmt = $pdo->prepare("SELECT * FROM offre");
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestion des Stages</title>
+    <link rel="stylesheet" href="../css/offer.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/apply.css">
+
 </head>
+
 <body>
     <header>
-    <?php
+        <?php
         include "../include/header.php";
-    ?>
-        <div class="banner">
-            <div class="titleMain">
-                <h1>Gestion de stages</h1>
-                <p>Votre avenir commence ici</p>
-            </div>
-            <div class="buttons">
-                <button><a href="/STAGE-SIO1/pages/login.php">Se connecter</button>
-                <button>S'inscrire</button>
-            </div>
-        </div>
+        ?>
     </header>
+    <main>
+        <?php
+        for ($i = 1; $i <= 10; $i++) {
+            ?>
+            <div class="card">
+                <div class="card-img-holder">
+                    <img src="/STAGE-SIO1/asset/worker.png" alt="Blog image">
+                </div>
+                <h3 class="blog-title">ASCI</h3>
+                <span class="blog-time">17/03/2025</span>
+                <p class="description">
+                    Developpement du site web interne de l'entreprise.
+                </p>
+                <div class="options">
+                    <span>
+                        ->
+                    </span>
+                    <button class="btn">En cours, en attente etc</button>
+                </div>
+            </div><?php
+        }
+        ?>
+    </main>
     <footer>
         <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
     </footer>
-    
+
+    <script src="script.js"></script>
 </body>
+
 </html>
