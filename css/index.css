@@ -16,8 +16,8 @@
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", system-ui;
-  --big-font-size: 1.5rem;
-  --normal-font-size: .938rem;
+  --big-font-size: 3rem;
+  --normal-font-size: 1.1rem;
   --small-font-size: .813rem;
   --tiny-font-size: .688rem;
 
@@ -35,7 +35,7 @@
 @media screen and (min-width: 1150px) {
   :root {
     --big-font-size: 3rem;
-    --normal-font-size: 1rem;
+    --normal-font-size: 1.1rem;
     --small-font-size: .875rem;
     --tiny-font-size: .75rem;
   }
@@ -43,9 +43,9 @@
 
 /*=============== BASE ===============*/
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body,
@@ -55,22 +55,101 @@ button {
   font-size: var(--normal-font-size);
 }
 
-body {
-  height:100vh;
-  background-image: url("background-index.jpg");
+.main-section {
+  height: 100vh;
+  background-image: url("https://i.imgur.com/g6qt5aS.jpeg");
   background-position: center;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
+.main-section .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  color: #fff;
 }
 
-.grid {
-  display: grid;
-  gap: 1rem;
+.main-section .content h2 {
+  font-size: 3rem;
+  max-width: 600px;
+  line-height: 70px;
+}
+
+.main-section .content p {
+  font-weight: 300;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+.main-section .content button {width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding-block: 1.5rem;
+  border-radius: 4rem;
+  margin-block: 2rem;
+  cursor: pointer;
+  transition: background-color .4s, box-shadow .4s;}
+
+.main-section .content button:hover {
+  color: #fff;
+  background: #C06B3E;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  .navbar .logo {
+    font-size: 1.7rem;
+  }
+
+  .navbar .menu-links {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 70px 40px 0;
+    transition: left 0.2s ease;
+  }
+
+  header.show-mobile-menu .navbar .menu-links {
+    left: 0;
+  }
+
+  .main-section .content {
+    text-align: center;
+  }
+
+  .main-section .content :is(h2, p) {
+    max-width: 100%;
+  }
+
+  .main-section .content h2 {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+  
+  .main-section .content button {width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding-block: 1.5rem;
+  border-radius: 4rem;
+  margin-block: 2rem;
+  cursor: pointer;
+  transition: background-color .4s, box-shadow .4s;}
 }
 
 /*=============== NAV ===============*/
@@ -118,6 +197,8 @@ nav ul li a:hover::after {
 nav ul li a:hover {
   color: #467ec9;
 }
+
+/*=============== FOOTER ===============*/
 
 footer {
   background-color: #19191B;
