@@ -181,7 +181,4 @@ if (isset($_POST["names"]) && isset($_POST["surnames"]) && isset($_POST["email"]
    <!--=============== MAIN JS ===============-->
    <script src="../js/login.js"></script>
 </body>
-<footer>
-   <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
-</footer>
 </html>  
