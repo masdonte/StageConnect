@@ -1,15 +1,7 @@
 <?php
 session_start();
-try {
-    $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
+include('./config.php'); ?>
 
-    //Configuration de PDO pour permettre la bonne gestion des erreurs
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erreur : " . $e->getMessage());
-}
-$stmt = $pdo->prepare("SELECT * FROM offre");
-?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -23,38 +15,57 @@ $stmt = $pdo->prepare("SELECT * FROM offre");
 
 <body>
     <header>
-    <?php
+        <?php
         include "../include/header.php";
-    ?>
+        ?>
     </header>
     <main>
-        <?php
-        for ($i = 1; $i <= 10; $i++) {
-            ?>
-            <div class="card">
-                <div class="card-img-holder">
-                    <img src="/STAGE-SIO1/asset/worker.png" alt="Blog image">
-                </div>
-                <h3 class="blog-title">ASCI</h3>
-                <span class="blog-time">17/03/2025</span>
-                <p class="description">
-                    Developpement du site web interne de l'entreprise.
-                </p>
-                <div class="options">
-                    <span>
-                        ->
-                    </span>
-                    <button class="btn">Postuler</button>
-                </div>
-            </div><?php
-        }
-        ?>
-    </main>
-    <footer>
-        <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
-    </footer>
+        <div class="card">
+            <div class="card-img-holder">
+                <img src="/STAGE-SIO1/asset/worker.png" alt="Blog image">
+            </div>
+            <h3 class="blog-title">
+                <?php $stmt = $conn->prepare("SELECT * FROM offre LIMIT 1 ");
+                $stmt->execute();
+                $nom_de_l_organisation = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($nom_de_l_organisation as $nom) {
+                    echo "<li>" . $nom["Nom_de_l_entreprise"] . "</li>";
+                } ?>
 
-    <script src="script.js"></script>
+            </h3>
+            <span class="blog-time"></span>
+            <p class="description">
+                <?php $stmt = $conn->prepare("SELECT * FROM offre");
+                $stmt->execute();
+                $Lieu_de_Stage = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($Lieu_de_Stage as $Lieu) {
+                    echo $Lieu["Lieu_de_Stage"];
+
+                }
+                ?>
+
+
+            </p>
+            <div class="options">
+                <span>
+                    <?php $stmt = $conn->prepare("SELECT * FROM offre");
+                    $stmt->execute();
+                    $Adresse = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($Adresse as $Lieu) {
+                        echo $Lieu["Adresse"];
+
+                    }
+                    ?>
+                </span>
+                <button class="btn">Postuler</button>
+            </div>
+        </div>
+        < </main>
+            <footer>
+                <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
+            </footer>
+
+            <script src="script.js"></script>
 </body>
 
 </html>
