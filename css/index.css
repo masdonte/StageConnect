@@ -152,11 +152,65 @@ a {
 
 /*=============== NAV ===============*/
 
-nav {
+.navbar {
   background-color: #19191B;
   padding: 30px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
+
+.logo-container {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-links li {
+  margin: 0 15px;
+}
+
+.menu-links li a {
+  color: #EEEEF0;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+
+.menu-links li a:hover {
+  color: #467ec9;
+}
+
+.navbar .logo span {
+  color: var(--first-color-alt);;
+}
+
+.menu-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto; 
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
