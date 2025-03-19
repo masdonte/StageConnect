@@ -10,10 +10,26 @@
       <?php
       if (isset($_SESSION["connected"]) && $_SESSION["connected"]) {
          ?>
-         <li>Bienvenue<?php
+         <li>Bienvenue <?php
          echo $_SESSION["nom"];
          ?></li><?php
       }
       ?>
+      <li>
+      <li>
+         <?php
+         if (isset($_SESSION["connected"])){
+         ?>
+         <form method="post">
+            <button type="submit" name="logout" class="button-connect">Se déconnecter</button>
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+               session_unset();
+               session_destroy();
+            }
+         }
+            ?>
+         </form>
+      </li>
    </ul>
 </nav>

@@ -24,6 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
     } else {
         echo "<script>alert('Erreur lors de l\'envoi de votre avis.');</script>";
     }
+
+}else if($_SERVER["REQUEST_METHOD"] === "POST") {
+    echo "<script>alert('Veuillez vous connecter !');</script>";
 }
 
 ?>
