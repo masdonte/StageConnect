@@ -1,4 +1,6 @@
-<?php include('./config.php'); ?>
+<?php
+session_start();
+include('./config.php'); ?>
 <?php
 
 $stmt = $conn->query("SELECT * FROM avis");
