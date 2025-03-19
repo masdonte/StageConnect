@@ -20,10 +20,10 @@
     <div class="content">
       <h2>Gestion de Stages</h2>
       <p>
-        Facilitez la gestion des stages étudiants avec notre plateforme intuitive,
-        <br>suivez, organisez et optimisez chaque étape en toute simplicité !
+        Facilitez la gestion des stages étudiants avec notre plateforme intuitive.
+        <br>Suivez, organisez et optimisez chaque étape en toute simplicité !
       </p>
-      <button><a href="..\pages\login.php">Se connecter</button>
+      <button><a href="..\pages\login.php" class=button-connect>Se connecter</button>
     </div>
   </section>
 </body>
