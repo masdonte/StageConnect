@@ -1,25 +1,31 @@
 <?php
 session_start();
-include('./config.php'); ?>
-<?php
+include('./config.php');
 
-$stmt = $conn->query("SELECT * FROM avis");
+// Récupération des avis
+$stmt = $conn->prepare("SELECT * FROM avis ORDER BY identifiant_id DESC LIMIT 3");
 $stmt->execute();
-$produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$avis = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if (isset($_POST["input"])) {
+// Vérification et insertion de l'avis
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_SESSION["nom"])) {
+    $nom = $_SESSION["nom"];
+    $avisTexte = htmlspecialchars($_POST['input']);
 
-    // Préparation de la requête
-    $stmt = $conn->prepare("INSERT INTO avis (Avis) VALUES (:avis)");
-    // Lier les paramètres
-    // $Mail = $_POST[];
-    $Avis = $_POST['input'];
-    $stmt->bindParam(':avis', $Avis);
-    // $stmt->bindParam(':Mail', $Avis);
+    // Préparation de la requête d'insertion
+    $stmt = $conn->prepare("INSERT INTO avis (Mail, Avis) VALUES (:mail, :avis)");
+    $stmt->bindParam(':mail', $nom);
+    $stmt->bindParam(':avis', $avisTexte);
 
-    // Exécuter la requête
-    $stmt->execute();
+    // Exécution de la requête
+    if ($stmt->execute()) {
+        header("Location: ".$_SERVER["PHP_SELF"]); // Rafraîchir la page après envoi
+        exit();
+    } else {
+        echo "<script>alert('Erreur lors de l\'envoi de votre avis.');</script>";
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +101,7 @@ if (isset($_POST["input"])) {
                     $stmt->execute();
                     $avis = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($avis as $review) {
-                        echo "<li>" . $review["Avis"] . " : " . $review["Mail"] . "</li>";
+                        echo "<li>" . $review["Mail"] . " : " . $review["Avis"] . "</li>";
                     }
                     ?>
 
