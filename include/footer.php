@@ -1,1 +1,1 @@
-<footer> @ 2025 StageConnect par Célina, Réda, Kamedine et Valentin</footer>
+<footer> @ 2025 StageConnect par Célina, Réda, Kamdine et Valentin</footer>

@@ -1,5 +1,5 @@
 <?php
-include("../include/permission.php");
+session_start();
 include('./config.php');
 
 // Récupération des avis
@@ -43,6 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
     ?>
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="..\css\review.css">
+    
+    
+
 </head>
 
 <body>
@@ -109,5 +112,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
     </div>
     <?php include('../include/footer.php'); ?>
 </body>
-                    
+
+
 </html>

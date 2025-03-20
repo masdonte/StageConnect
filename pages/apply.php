@@ -19,8 +19,6 @@ $stmt = $pdo->prepare("SELECT * FROM offre");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Stages</title>
     <link rel="stylesheet" href="../css/offer.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/apply.css">
 
 </head>
 
