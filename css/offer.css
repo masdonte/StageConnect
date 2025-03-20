@@ -1,41 +1,19 @@
 /* parti de creation des offres de stages */
 
-
 *,
 *:after,
 *:before {
-
-
     box-sizing: border-box;
-
-
 }
-
-
-
-
-
-
-
 
 @media screen and (max-width: 768px) {
 
-
     html {
-
-
         font-size: 15px
     }
-
-
 }
 
-
-
-
-
 @media screen and (max-width: 465px) {
-
 
     html {
 
@@ -45,13 +23,6 @@
 
 
 }
-
-
-
-
-
-
-
 
 .card {
 
@@ -85,10 +56,6 @@
 
 }
 
-
-
-
-
 .card-img-holder {
 
 
@@ -102,10 +69,6 @@
 
 
 }
-
-
-
-
 
 .card-img-holder img {
 
@@ -127,10 +90,6 @@
 
 }
 
-
-
-
-
 .blog-title {
 
 
@@ -144,10 +103,6 @@
 
 
 }
-
-
-
-
 
 .description {
 
@@ -163,10 +118,6 @@
 
 }
 
-
-
-
-
 .blog-time {
 
 
@@ -177,10 +128,6 @@
 
 
 }
-
-
-
-
 
 .options {
 
@@ -199,10 +146,6 @@
 
 }
 
-
-
-
-
 .options span {
 
 
@@ -213,10 +156,6 @@
 
 
 }
-
-
-
-
 
 .btn {
 
@@ -244,7 +183,6 @@
 
 }
 
-
 main {
 
 
@@ -262,8 +200,113 @@ main {
 
 }
 
-
-
-
-
 /* fin de la partie bouton je vais CREER un autre style je pense */
+
+/*=============== NAV ===============*/
+
+.navbar {
+    background-color: #19191B;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .logo-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .menu-links li {
+    margin: 0 15px;
+  }
+  
+  .menu-links li a {
+    color: #EEEEF0;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s;
+  }
+  
+  .menu-links li a:hover {
+    color: #467ec9;
+  }
+  
+  .navbar .logo span {
+    color: var(--first-color-alt);;
+  }
+  
+  .menu-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; 
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: -20;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 30px;
+  }
+  
+  nav ul li a {
+    position: relative;
+    color: #EEEEF0;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s;
+  }
+  nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #5f73e6;
+    transition: width 0.3s ease-in-out;
+  }
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  nav ul li a:hover {
+    color: #467ec9;
+  }
+  
+  /*=============== FOOTER ===============*/
+  
+  footer {
+    background-color: #19191B;
+    color: #EEEEF0;
+    text-align: center;
+    padding: 30px;
+  }

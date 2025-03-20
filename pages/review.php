@@ -105,12 +105,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
                     <!-- Vous pouvez ajouter d'autres avis ici -->
                 </ul>
             </div>
-
-
         </div>
     </div>
     <?php include('../include/footer.php'); ?>
 </body>
-
-
+                    
 </html>
