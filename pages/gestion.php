@@ -1,13 +1,6 @@
 <?php
 include("../include/permission.php");
-try {
-    $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
-
-    //Configuration de PDO pour permettre la bonne gestion des erreurs
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erreur : " . $e->getMessage());
-}
+include("../pages/config.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,21 +15,9 @@ try {
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/STAGE-SIO1/pages/index.php">Accueil</a></li>
-                <li><a href="/STAGE-SIO1/pages/gestion.php">Gestion de vos offres de stage</a></li>
-                <li><a href="/STAGE-SIO1/pages/apply.php">Postuler</a></li>
-                <li><a href="/STAGE-SIO1/pages/review.php">Avis</a></li>
-                <?php
-                if ($_SESSION["connected"]&&isset( $_SESSION["connected"])) {
-                    ?><li>Bienvenue <?php
-                    echo $_SESSION["nom"];
-                    ?></li><?php
-                }
-                ?>
-            </ul>
-        </nav>
+        <?php
+        include("../include/header.php");
+        ?>
     </header>
     <main>
         <div class="gestion">
