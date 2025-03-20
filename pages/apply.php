@@ -1,5 +1,5 @@
 <?php
-session_start();
+include("../include/permission.php");
 try {
     $pdo = new PDO("mysql:host=localhost;dbname=challenge", "root", "");
 
