@@ -53,6 +53,7 @@ input,
 button {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+  background-color: #19191B;
 }
 
 /*=============== CREATION DES OFFRES DE STAGES ===============*/
@@ -60,128 +61,72 @@ button {
 *,
 *:after,
 *:before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 768px) {
 
-    html {
-        font-size: 15px
-    }
+  html {
+    font-size: 15px
+  }
 }
 
 @media screen and (max-width: 465px) {
 
-    html {
+  html {
 
 
-        font-size: 14px
-    }
+    font-size: 14px
+  }
 
 
 }
 
 .card {
-
-
-    width: 25rem;
-
-
-    height: auto;
-
-
-    background: #fff;
-
-
-    border-radius: 1.5rem;
-
-
-    padding: 1.5rem;
-
-
-    overflow: hidden;
-
-
-    position: relative;
-
-
-    display: flex;
-
-
-    flex-direction: column;
-
-
-}
-
-.card-img-holder {
-
-
-    width: 100%;
-
-
-    height: auto;
-
-
-    position: relative;
-
-
-}
-
-.card-img-holder img {
-
-
-    width: 100%;
-
-
-    height: auto;
-
-
-    max-height: 15rem;
-
-
-    object-fit: cover;
-
-
-    border-radius: 1.5rem;
-
+  width: 25rem;
+  height: auto;
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #22215B;
+  /* Ajout de la bordure */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optionnel : ajout d'une ombre pour un effet de profondeur */
 
 }
 
 .blog-title {
 
 
-    color: #22215B;
+  color: #22215B;
 
 
-    padding: 1rem 0;
+  padding: 1rem 0;
 
 
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 
 
 }
 
 .description {
-
-
-    padding: 1rem 0;
-
-
-    color: #22215B80;
-
-
-    font-size: 1rem;
-
+  padding: 1rem 0;
+  color: #22215B80;
+  font-size: 1rem;
 
 }
 
 .blog-time {
 
 
-    font-size: .8rem;
+  font-size: .8rem;
 
 
-    color: #22215B;
+  color: #22215B;
 
 
 }
@@ -189,16 +134,16 @@ button {
 .options {
 
 
-    display: flex;
+  display: flex;
 
 
-    align-items: center;
+  align-items: center;
 
 
-    justify-content: space-between;
+  justify-content: space-between;
 
 
-    font-size: 1rem;
+  font-size: 1rem;
 
 
 }
@@ -206,10 +151,10 @@ button {
 .options span {
 
 
-    font-weight: 600;
+  font-weight: 600;
 
 
-    color: #22215B;
+  color: #22215B;
 
 
 }
@@ -217,25 +162,25 @@ button {
 .btn {
 
 
-    font-size: 1rem;
+  font-size: 1rem;
 
 
-    padding: .5rem 1rem;
+  padding: .5rem 1rem;
 
 
-    border-radius: .5rem;
+  border-radius: .5rem;
 
 
-    font-weight: 400;
+  font-weight: 400;
 
 
-    background: #EEF7FE;
+  background: #EEF7FE;
 
 
-    color: #22215B;
+  color: #22215B;
 
 
-    cursor: pointer;
+  cursor: pointer;
 
 
 }
@@ -243,16 +188,16 @@ button {
 main {
 
 
-    display: flex;
+  display: flex;
 
 
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 
 
-    gap: 2rem;
+  gap: 2rem;
 
 
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 
 
 }
@@ -313,14 +258,15 @@ main {
 }
 
 .navbar .logo span {
-  color: var(--first-color-alt);;
+  color: var(--first-color-alt);
+  ;
 }
 
 .menu-links {
   display: flex;
   list-style: none;
   padding: 0;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .navbar a {
@@ -350,6 +296,7 @@ nav ul li a {
   padding: 10px 15px;
   transition: color 0.3s;
 }
+
 nav ul li a::after {
   content: "";
   position: absolute;
@@ -360,6 +307,7 @@ nav ul li a::after {
   background-color: #5f73e6;
   transition: width 0.3s ease-in-out;
 }
+
 nav ul li a:hover::after {
   width: 100%;
 }
@@ -376,4 +324,3 @@ footer {
   text-align: center;
   padding: 30px;
 }
-
