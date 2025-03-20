@@ -36,8 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["text"]) && isset($_SE
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Stages</title>
-    <link rel="stylesheet" href="../css/offer.css">
-    <link rel="stylesheet" href="..\css\login.css">
+ 
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/apply.css">
 
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
