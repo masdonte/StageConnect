@@ -18,16 +18,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["text"]) && isset($_SE
 
     // Exécution de la requête
     if ($stmt->execute()) {
-        header("Location: offer.php ".$_SERVER["PHP_SELF"]); // Rafraîchir la page après envoi
+        header("Location: offer.php " . $_SERVER["PHP_SELF"]); // Rafraîchir la page après envoi
         exit();
+
+
     } else {
         echo "<script>alert('Erreur lors de l\'envoi de votre avis.');</script>";
     }
 
-}else if($_SERVER["REQUEST_METHOD"] === "POST") {
+} else if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "<script>alert('Veuillez vous connecter !');</script>";
 }
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -82,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["text"]) && isset($_SE
                         <div class="login__box">
                             <input type="text" name="text" id="text" required placeholder=" " class="login__input">
                             <label for="text" class="login__label">Lieu de Stage</label>
-                             <i class="ri-mail-fill login__icon"></i>
+                            <i class="ri-mail-fill login__icon"></i>
                         </div>
 
 
@@ -98,10 +100,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["text"]) && isset($_SE
                             <i class="ri-eye-off-fill login__icon login__text" id="logintext"></i>
                         </div>
                         <div class="login__box">
-                        <input type="email" name="email" required placeholder=" " class="login__input">
-                        <label for="emailCreate" class="login__label">Email</label>
-                        <i class="ri-mail-fill login__icon"></i>
-                    </div>
+                            <input type="email" name="email" required placeholder=" " class="login__input">
+                            <label for="emailCreate" class="login__label">Email</label>
+                            <i class="ri-mail-fill login__icon"></i>
+                        </div>
 
                         <div class="login__box">
                             <input type="text" name="text" id="text" required placeholder=" " class="login__input">
