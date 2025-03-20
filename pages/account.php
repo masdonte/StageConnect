@@ -14,7 +14,7 @@ if (isset($_POST['logout'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--=============== CSS ===============-->
-  <link rel="stylesheet" href="..\css\styles.css">
+  <link rel="stylesheet" href="..\css\account.css">
 
   <title>StageConnect</title>
   <?php
