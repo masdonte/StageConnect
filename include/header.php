@@ -13,15 +13,16 @@
       <li><a href="/STAGE-SIO1/pages/review.php">Avis</a></li>
       <li><a href="/STAGE-SIO1/pages/faq.php">FAQ</a></li>
 
-   </ul>
-   </div>
+   
       <?php
       if (isset($_SESSION["connected"]) && $_SESSION["connected"]) {
          ?>
-         <li>Bienvenue<?php
-         echo $_SESSION["nom"];
-         ?></li><?php
+         <li>
+            <a href="/STAGE-SIO1/pages/account.php">Gérer son compte</a>
+         </li>
+         <?php
       }
       ?>
+   </div>
    </ul>
 </nav>

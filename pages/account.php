@@ -1,0 +1,21 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="..\css\styles.css">
+
+  <title>StageConnect</title>
+  <?php
+  include "../include/header.php";
+  ?>
+</head>
+<?php
+include "../include/footer.php";
+?>
