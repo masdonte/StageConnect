@@ -4,15 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FAQ</title>
     <?php
     include "../include/header.php";
-?>
+    ?>
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="/STAGE-SIO1/css/index.css">
+    <link rel="stylesheet" href="../css/faq.css">
 </head>
-<!--=============== CSS ===============-->
-<link rel="stylesheet" href="/STAGE-SIO1/css/index.css">
-<link rel="stylesheet" href="../css/faq.css">
-
 
 <body>
     <div class="questions">
@@ -47,7 +46,6 @@
             stage.</p>
 
     </div>
-
     <?php include('../include/footer.php'); ?>
 </body>
 
