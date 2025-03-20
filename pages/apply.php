@@ -1,5 +1,5 @@
 <?php
-session_start();
+include("../include/permission.php");
 include('./config.php');
 // Récupération des avis
 $stmt = $conn->prepare("SELECT * FROM offre ORDER BY Lieu_de_Stage DESC LIMIT 3");
