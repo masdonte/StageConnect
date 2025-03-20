@@ -135,17 +135,6 @@ if (isset($_POST["names"]) && isset($_POST["surnames"]) && isset($_POST["email"]
                 </p>
             </div>
         </div>
-<<<<<<< HEAD
-    </div>
-</div>
-<?php include('../include/footer.php'); ?>
-   <!--=============== MAIN JS ===============-->
-   <script src="../js/login.js"></script>
-
-</body>
-
-</html>  
-=======
 
         <!--===== LOGIN REGISTER =====-->
         <div class="login__register">
@@ -195,4 +184,3 @@ if (isset($_POST["names"]) && isset($_POST["surnames"]) && isset($_POST["email"]
 </body>
 
 </html>
->>>>>>> fc93ed5b8465ce18b15975a679ad7d2f4f209018
