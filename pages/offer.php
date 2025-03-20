@@ -1,5 +1,5 @@
 <?php
-session_start();
+include("../include/permission.php");
 include('./config.php'); ?>
 
 <!DOCTYPE html>
