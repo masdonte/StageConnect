@@ -99,7 +99,6 @@ if (isset($_POST["names"]) && isset($_POST["surnames"]) && isset($_POST["email"]
             591.11 115.306 518.927 176.468 488.873C363.385 397.026 156.98 302.824 
             167.945 179.32C173.46 117.209 284.755 95.1699 342.407 73.6315Z" />
 
-         <!-- Insert your image (recommended size: 1000 x 1200) -->
          <image class="login__img" href="assets/img/bg-img.jpg" />
       </g>
    </svg>
@@ -178,8 +177,11 @@ if (isset($_POST["names"]) && isset($_POST["surnames"]) && isset($_POST["email"]
             </p>
         </div>
     </div>
+</div>
+<?php include('../include/footer.php'); ?>
    <!--=============== MAIN JS ===============-->
    <script src="../js/login.js"></script>
-   <?php include('../include/footer.php'); ?>
+
 </body>
+
 </html>  
