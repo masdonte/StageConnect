@@ -34,7 +34,7 @@ if (isset($_POST['logout'])) {
             </tr>
             <tr>
                 <td><?php echo htmlspecialchars($_SESSION["user_id"]); ?></td>
-                <td><?php echo htmlspecialchars($_SESSION["nom"]); ?></td>
+                <td><?php echo htmlspecialchars($_SESSION["nom"]); ?></td>  
                 <td>
                     <form method="POST">
                         <button class="logout-button" type="submit" name="logout">Se déconnecter</button>

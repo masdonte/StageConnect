@@ -55,7 +55,16 @@
     cursor: pointer;
     transition: background-color .4s, box-shadow .4s;
     font-size: 25px;
+    padding-block:25px;
+    padding:40px;
+    border:none;
 }
+
+.login_box button:hover {
+        background-color: var(--first-color-alt);
+        box-shadow: 0 8px 24px hsla(208, 92%, 32%, .3);
+      }
+
 .login_box {
     display: flex; /* Utiliser flexbox pour l'alignement */
     flex-direction: column; /* Aligner les boutons en colonne */
