@@ -24,10 +24,17 @@ include("../pages/config.php");
 
         <div class="login_box">
             <div class="ajouter">
-                <button type="submit" class="login__button">Modifier/Supprimer vos offres de stage</button>
+                <form action="">
+                    <button type="submit" class="login__button">Modifier/Supprimer vos offres de stage [En
+                        travaux]</button>
+                </form>
+
             </div>
             <div class="modifier">
-                <button type="submit" class="login__button">Ajouter une nouvelle offre de stage</button>
+                <form action="../pages/apply.php">
+                    <button type="submit" class="login__button">Ajouter une nouvelle offre de stage</button>
+                </form>
+
             </div>
         </div>
     </main>

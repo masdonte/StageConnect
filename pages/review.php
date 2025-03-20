@@ -19,13 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
 
     // Exécution de la requête
     if ($stmt->execute()) {
-        header("Location: ".$_SERVER["PHP_SELF"]); // Rafraîchir la page après envoi
+        header("Location: " . $_SERVER["PHP_SELF"]); // Rafraîchir la page après envoi
         exit();
     } else {
         echo "<script>alert('Erreur lors de l\'envoi de votre avis.');</script>";
     }
 
-}else if($_SERVER["REQUEST_METHOD"] === "POST") {
+} else if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "<script>alert('Veuillez vous connecter !');</script>";
 }
 ?>
@@ -39,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
 
     <title>StageConnect</title>
     <?php
-        include "../include/header.php";
+    include "../include/header.php";
     ?>
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="..\css\review.css">
-    
-    
+
+
 
 </head>
 
