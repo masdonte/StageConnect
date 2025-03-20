@@ -34,7 +34,7 @@ main {
     padding: 30px;
     max-width: 600px;
     width: 100%;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.05), -10px -10px 40px  hsl(208, 92%, 54%);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05), -5px -5px 20px  hsl(208, 92%, 54%);
 }
 
 h1 {
