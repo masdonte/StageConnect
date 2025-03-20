@@ -28,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
 }else if($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "<script>alert('Veuillez vous connecter !');</script>";
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -38,21 +37,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--=============== REMIXICONS ===============-->
-
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="..\css\review.css">
-
     <title>StageConnect</title>
     <?php
         include "../include/header.php";
     ?>
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="..\css\review.css">
 </head>
 
 <body>
-
-
-
     <!--=============== LOGIN IMAGE ===============-->
     <svg class="login__blob" viewBox="0 0 566 840" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0" mask-type="alpha">
@@ -68,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
             591.11 115.306 518.927 176.468 488.873C363.385 397.026 156.98 302.824 
             167.945 179.32C173.46 117.209 284.755 95.1699 342.407 73.6315Z" />
 
-            <!-- Insert your image (recommended size: 1000 x 1200) -->
             <image class="login__img" href="assets/img/bg-img.jpg" />
         </g>
     </svg>
@@ -117,7 +109,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"]) && isset($_S
 
         </div>
     </div>
-
     <?php include('../include/footer.php'); ?>
 </body>
 
