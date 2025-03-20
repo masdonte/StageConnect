@@ -18,8 +18,8 @@
   --body-font: "Montserrat", system-ui;
   --big-font-size: 3rem;
   --normal-font-size: 1.1rem;
-  --small-font-size: .813rem;
-  --tiny-font-size: .688rem;
+  --small-font-size: 0.813rem;
+  --tiny-font-size: 0.688rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -36,118 +36,182 @@
   :root {
     --big-font-size: 3rem;
     --normal-font-size: 1.1rem;
-    --small-font-size: .875rem;
-    --tiny-font-size: .75rem;
+    --small-font-size: 0.875rem;
+    --tiny-font-size: 0.75rem;
   }
+}
+
+/* ======== Style Container ======== */
+.account-container {
+  background-color: var(--container-color);
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: var(--body-font);
+  max-width: 90%;
+  width: 400px;
+}
+
+/* ======== Center the box ======== */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+/* ======== Titre ======== */
+.account-title {
+  font-size: 1.5rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ======== Table ======== */
+.account-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.account-table th,
+.account-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.account-table th {
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+}
+
+/* ======== Button Logout ======== */
+.logout-button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: var(--font-medium);
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: var(--first-color-alt);
 }
 
 /*=============== NAV ===============*/
 
 .navbar {
-    background-color: #19191B;
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-  }
-  
-  .logo-container {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .logo {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .menu-links li {
-    margin: 0 15px;
-  }
-  
-  .menu-links li a {
-    color: #EEEEF0;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: color 0.3s;
-  }
-  
-  .menu-links li a:hover {
-    color: #467ec9;
-  }
-  
-  .navbar .logo span {
-    color: var(--first-color-alt);;
-  }
-  
-  .menu-links {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0 auto; 
-  }
-  
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.2s ease;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: -20;
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin: 0 30px;
-  }
-  
-  nav ul li a {
-    position: relative;
-    color: #EEEEF0;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: color 0.3s;
-  }
-  nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 3px;
-    background-color: #5f73e6;
-    transition: width 0.3s ease-in-out;
-  }
-  nav ul li a:hover::after {
-    width: 100%;
-  }
-  
-  nav ul li a:hover {
-    color: #467ec9;
-  }
-  
-  /*=============== FOOTER ===============*/
-  
-  footer {
-    background-color: #19191B;
-    color: #EEEEF0;
-    text-align: center;
-    padding: 30px;
-  }
-  
-  
+  background-color: #19191b;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.logo-container {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-links li {
+  margin: 0 15px;
+}
+
+.menu-links li a {
+  color: #eeeef0;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+
+.menu-links li a:hover {
+  color: #467ec9;
+}
+
+.navbar .logo span {
+  color: var(--first-color-alt);
+}
+
+.menu-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: -20;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 30px;
+}
+
+nav ul li a {
+  position: relative;
+  color: #eeeef0;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background-color: #5f73e6;
+  transition: width 0.3s ease-in-out;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #467ec9;
+}
+
+/*=============== FOOTER ===============*/
+
+footer {
+  background-color: #19191b;
+  color: #eeeef0;
+  text-align: center;
+  padding: 30px;
+}
