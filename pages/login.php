@@ -99,16 +99,10 @@ if (isset($_POST["names"]) && isset($_POST["surnames"]) && isset($_POST["email"]
             591.11 115.306 518.927 176.468 488.873C363.385 397.026 156.98 302.824 
             167.945 179.32C173.46 117.209 284.755 95.1699 342.407 73.6315Z" />
 
-<<<<<<< HEAD
-         <image class="login__img" href="assets/img/bg-img.jpg" />
-      </g>
-   </svg>
-=======
             <!-- Insert your image (recommended size: 1000 x 1200) -->
             <image class="login__img" href="assets/img/bg-img.jpg" />
         </g>
     </svg>
->>>>>>> fc93ed5b8465ce18b15975a679ad7d2f4f209018
 
     <!--=============== LOGIN ===============-->
     <div class="login container grid" id="loginAccessRegister">
