@@ -9,44 +9,51 @@
     include "../include/header.php";
     ?>
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="/STAGE-SIO1/css/index.css">
-    <link rel="stylesheet" href="../css/faq.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css";>
 </head>
 
 <body>
-    <div class="questions">
-        <br>
-
-        <h1 class="titre">Toutes vos réponses à vos questions.</h1>
-        <br>
-        <br>
-        <br>
-
-        <h2>Comment se connecter ?</h2>
-        <p>Pour se connecter, vous devez créer un compte ou vous connecter directement. Suite à cela, vous pourrez
-            accéder à notre plateforme StageConnect.</p>
-        <br><br>
-        <h2>À quoi sert notre site internet ?</h2>
-        <p>Il vous permet d'accéder à de nombreuses offres d'entreprises en fonction de votre spécialité, vous pourrez
-            ainsi postuler directement pour un stage.</p>
-        <br><br>
-        <h2>Qui sont les créateurs de cette plateforme ?</h2>
-        <p>Les créateurs de cette plateforme sont Kamdine, Valentin, Réda et Célina.</p>
-        <br><br>
-        <h2>Pouvez-vous écrire votre avis ou communiquer directement entre vous ?</h2>
-        <p>Vous pouvez écrire différents avis tout simplement en étant connecté, ce qui vous permet de partager votre
-            expérience ou votre avis sur notre plateforme.</p>
-        <br><br>
-        <h2>Quelles sont les erreurs à éviter lors de la recherche d'emploi ?</h2>
-        <p>Évitez d'envoyer des candidatures génériques, de ne pas suivre les instructions de candidature et de ne pas
-            préparer l'entretien.</p>
-        <br><br>
-        <h2>Quel est le but de ce site internet ?</h2>
-        <p>Nous avons créé ce site internet dans le but d'aider toutes les personnes en BTS SIO dans la recherche d'un
-            stage.</p>
-
+<main>
+    <div class="container">
+        <h1>Questions fréquentes</h1>
+        <div class="faq-section">
+            <div class="faq-item">
+                <input type="checkbox" id="faq1" class="faq-toggle">
+                <label for="faq1" class="faq-question">
+                    Comment se connecter ?
+                    <i class="fas fa-chevron-down icon"></i>
+                </label>
+                <div class="faq-answer">
+                    <p>Pour se connecter, vous devez créer un compte ou vous connecter directement. Suite à cela, vous pourrez
+                    accéder à notre plateforme StageConnect.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <input type="checkbox" id="faq2" class="faq-toggle">
+                <label for="faq2" class="faq-question">
+                    À quoi sert notre site internet ?
+                    <i class="fas fa-chevron-down icon"></i>
+                </label>
+                <div class="faq-answer">
+                    <p>Il vous permet d'accéder à de nombreuses offres d'entreprises en fonction de votre spécialité, vous pourrez ainsi postuler directement pour un stage.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <input type="checkbox" id="faq3" class="faq-toggle">
+                <label for="faq3" class="faq-question">
+                    Qui sont les créateurs de cette plateforme ?
+                    <i class="fas fa-chevron-down icon"></i>
+                </label>
+                <div class="faq-answer">
+                    <p>Les créateurs de cette plateforme sont Kamdine, Valentin, Réda et Célina.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <?php include('../include/footer.php'); ?>
+<main>
+<?php include('../include/footer.php'); ?>
 </body>
 
 </html>
