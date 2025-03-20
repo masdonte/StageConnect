@@ -1,27 +1,51 @@
 <?php
-include("../include/permission.php");
+session_start();
 include('./config.php');
+
+
+try {
+    $conn = new PDO('mysql:host=localhost;dbname=challenge', $user, $password);
+
+    $stmt = $conn->prepare('SELECT * FROM offre');
+
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+
 // Récupération des avis
-$stmt = $conn->prepare("SELECT * FROM offre ORDER BY Lieu_de_Stage DESC LIMIT 3");
+$stmt = $conn->prepare("SELECT * FROM offre ");
 $stmt->execute();
-$avis = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$offre = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Vérification et insertion de l'avis
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["text"]) && isset($_SESSION["nom"])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["input"])) {
     $nom = $_SESSION["nom"];
-    $avisTexte = htmlspecialchars($_POST['text']);
+    $lieudestage = ($_POST['input']);
+    $nomentreprise = ($_POST['nomentreprise']);
+    $adresse = ($_POST['adresse']);
+    $mail = ($_POST['email']);
+    $numerodetel = ($_POST['numerotelephone']);
+    $datedestage = ($_POST['datestage']);
+    $horairedestage = ($_POST['horraireDeStage']);
+    $optionvise = ($_POST['SISRouSLAM']);
+    $nom = htmlspecialchars($_POST['input']);
 
     // Préparation de la requête d'insertion
-    $stmt = $conn->prepare("INSERT INTO offre (Lieu_de_Stage) VALUES (:Lieu_de_Stage)");
-    $stmt->bindParam(':offre', $nom);
-    //$stmt->bindParam(':avis', $avisTexte);
+    $stmt = $conn->prepare("INSERT INTO offre (Lieu_de_Stage, Nom_de_l_entreprise, Adresse, Mail, Numero_de_telephone, Date_de_Stage, Horaire_de_Stage, Type_d_option_vise) VALUES (:Lieu_de_Stage, :Nom_de_l_entreprise, :Adresse, :Mail, :Numero_de_telephone, :Date_de_Stage, :Horaire_de_Stage, :Type_d_option_vise)");
+    $stmt->bindParam(':Lieu_de_Stage', $lieudestage);
+    $stmt->bindParam(':Nom_de_l_entreprise', $nomentreprise);
+    $stmt->bindParam(':Adresse', $adresse);
+    $stmt->bindParam(':Mail', $mail);
+    $stmt->bindParam(':Numero_de_telephone', $numerodetel);
+    $stmt->bindParam(':Date_de_Stage', $datedestage);
+    $stmt->bindParam(':Horaire_de_Stage', $horairedestage);
+    $stmt->bindParam(':Type_d_option_vise', $optionvise);
 
     // Exécution de la requête
     if ($stmt->execute()) {
-        header("Location: offer.php " . $_SERVER["PHP_SELF"]); // Rafraîchir la page après envoi
+        header("Location: " . $_SERVER["PHP_SELF"]); // Rafraîchir la page après envoi
         exit();
-
-
     } else {
         echo "<script>alert('Erreur lors de l\'envoi de votre avis.');</script>";
     }
@@ -39,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["text"]) && isset($_SE
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Stages</title>
     <link rel="stylesheet" href="../css/offer.css">
-    <link rel="stylesheet" href="..\css\login.css">
+    <link rel="stylesheet" href="../css/login.css">
 
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
@@ -79,23 +103,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["text"]) && isset($_SE
         <div class="login__access">
             <h1 class="login__title">Postulez votre organisation</h1>
             <div class="login__area">
-                <form action="" method="POST" class="login__form">
+                <form method="POST" class="login__form">
                     <div class="login__content grid">
                         <div class="login__box">
-                            <input type="text" name="text" id="text" required placeholder=" " class="login__input">
+                            <input type="text" name="input" id="text" required placeholder=" " class="login__input">
                             <label for="text" class="login__label">Lieu de Stage</label>
                             <i class="ri-mail-fill login__icon"></i>
                         </div>
 
-
-
                         <div class="login__box">
-                            <input type="text" name="text" id="text" required placeholder=" " class="login__input">
+                            <input type="text" name="nomentreprise" id="text" required placeholder=" "
+                                class="login__input">
                             <label for="text" class="login__label">Nom de l'entreprise</label>
                             <i class="ri-eye-off-fill login__icon login__text" id="logintext"></i>
                         </div>
                         <div class="login__box">
-                            <input type="text" name="text" id="text" required placeholder=" " class="login__input">
+                            <input type="text" name="adresse" id="text" required placeholder=" " class="login__input">
                             <label for="text" class="login__label">Adresse</label>
                             <i class="ri-eye-off-fill login__icon login__text" id="logintext"></i>
                         </div>
@@ -106,33 +129,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["text"]) && isset($_SE
                         </div>
 
                         <div class="login__box">
-                            <input type="text" name="text" id="text" required placeholder=" " class="login__input">
+                            <input type="text" name="numerotelephone" id="text" required placeholder=" "
+                                class="login__input">
                             <label for="text" class="login__label">Numéro de Téléphone</label>
                             <i class="ri-eye-off-fill login__icon login__text" id="logintext"></i>
                         </div>
                         <div class="login__box">
-                            <input type="text" name="text" id="text" required placeholder=" " class="login__input">
+                            <input type="text" name="datestage" id="text" required placeholder=" " class="login__input">
                             <label for="text" class="login__label">Date de Stage</label>
                             <i class="ri-eye-off-fill login__icon login__text" id="logintext"></i>
                         </div>
                         <div class="login__box">
-                            <input type="text" name="text" id="text" required placeholder=" " class="login__input">
+                            <input type="text" name="horraireDeStage" id="text" required placeholder=" "
+                                class="login__input">
                             <label for="text" class="login__label">Horaire de Stage</label>
                             <i class="ri-eye-off-fill login__icon login__text" id="logintext"></i>
                         </div>
                         <div class="login__box">
-                            <input type="text" name="text" id="text" required placeholder=" " class="login__input">
+                            <input type="text" name="SISRouSLAM" id="text" required placeholder=" "
+                                class="login__input">
                             <label for="text" class="login__label">Type d'option visé</label>
                             <i class="ri-eye-off-fill login__icon login__text" id="logintext"></i>
                         </div>
                     </div>
-                    <button type="submit" class="login__button">Connexion</button>
+                    <button type="submit" class="login__button">Postuler</button>
                 </form>
 
                 </p>
             </div>
         </div>
-
 
         <!--=============== MAIN JS ===============-->
         <script src="../js/login.js"></script>
