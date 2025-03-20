@@ -180,5 +180,6 @@ if (isset($_POST["names"]) && isset($_POST["surnames"]) && isset($_POST["email"]
     </div>
    <!--=============== MAIN JS ===============-->
    <script src="../js/login.js"></script>
+   <?php include('../include/footer.php'); ?>
 </body>
 </html>  

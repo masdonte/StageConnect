@@ -27,7 +27,5 @@
     </div>
   </section>
 </body>
-<footer>
-  <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
-</footer>
+<?php include('../include/footer.php'); ?>
 </html>

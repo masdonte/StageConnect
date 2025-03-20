@@ -48,9 +48,7 @@ try {
             </div>
         </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Gestion des Stages. Tous droits réservés. ASCI Chopin</p>
-    </footer>
+    <?php include('../include/footer.php'); ?>
 
     <script src="../script.js"></script>
 </body>
