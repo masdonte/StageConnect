@@ -4,6 +4,7 @@ include("../pages/config.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +21,13 @@ include("../pages/config.php");
         ?>
     </header>
     <main>
-        <div class="gestion">
-            <div class="modifier">
-                <h3>Modifier/Supprimer vos offres de stage</h3>
-                
-            </div>
+
+        <div class="login_box">
             <div class="ajouter">
-                <h3>Ajouter des offres de stage</h3>
+                <button type="submit" class="login__button">Modifier/Supprimer vos offres de stage</button>
+            </div>
+            <div class="modifier">
+                <button type="submit" class="login__button">Ajouter une nouvelle offre de stage</button>
             </div>
         </div>
     </main>
