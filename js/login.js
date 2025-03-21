@@ -1,4 +1,4 @@
-/*=============== SHOW HIDE PASSWORD LOGIN ===============*/
+/*=============== AFFICHER OU CACHER LE MOT DE PASSE ===============*/
 const passwordAccess = (loginPass, loginEye) =>{
     const input = document.getElementById(loginPass),
           iconEye = document.getElementById(loginEye)
