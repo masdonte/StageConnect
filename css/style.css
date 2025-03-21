@@ -1,5 +1,37 @@
+/*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
 
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(208, 92%, 54%);
+  --first-color-alt: hsl(208, 88%, 50%);
+  --title-color: hsl(220, 68%, 4%);
+  --white-color: hsl(0, 0%, 100%);
+  --text-color: hsl(220, 15%, 66%);
+  --body-color: hsl(0, 0%, 100%);
+  --container-color: hsl(220, 50%, 97%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", system-ui;
+  --big-font-size: 3rem;
+  --normal-font-size: 1.1rem;
+  --small-font-size: .813rem;
+  --tiny-font-size: .688rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*=============== BASE ===============*/
 body {
     font-family: 'Montserrat', system-ui;
     background-color: #18181b;
@@ -28,6 +60,8 @@ main {
   align-items: center;
 }
 
+
+/*=============== CONTENT ===============*/
 .container {
     background-color: hsl(208, 92%, 54%);
     border-radius: 30px;
