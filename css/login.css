@@ -216,7 +216,7 @@ img {
   pointer-events: none;
 }
 
-/* Input focus move up label */
+/*=============== TRANSFORM CSS INPUT LABEL ===============*/
 .login__input:focus ~ .login__label {
   transform: translateY(-12px);
   font-size: var(--tiny-font-size);
@@ -226,7 +226,6 @@ img {
   padding-block: 2rem 1rem;
 }
 
-/* Input focus sticky top label */
 .login__input:not(:placeholder-shown).login__input:not(:focus) ~ .login__label {
   transform: translateY(-12px);
   font-size: var(--tiny-font-size);
@@ -236,7 +235,6 @@ img {
   padding-block: 2rem 1rem;
 }
 
-/* Input focus color */
 .login__input:focus {
   border-color: var(--first-color);
 }
@@ -259,7 +257,7 @@ img {
   pointer-events: initial;
 }
 
-/*=============== BREAKPOINTS ===============*/
+/*=============== RESPONSIVE ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {
   .container {
