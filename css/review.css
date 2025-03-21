@@ -63,36 +63,6 @@ body {
   color: var(--text-color);
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-button {
-  background-color: #f44336; /* Couleur rouge pour indiquer déconnexion */
-  color: white; /* Texte en blanc */
-  font-size: 12px; /* Petit texte */
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #d32f2f; /* Couleur légèrement plus sombre au survol */
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
